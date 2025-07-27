@@ -123,7 +123,7 @@ def process_pdfs(input_dir: str = "D:/GitHub/Adobe-India-Hackathon25/Challenge_1
     
     # Validate input directory
     if not input_path.exists():
-        print(f"❌ Input directory not found: {input_path}")
+        print(f"Input directory not found: {input_path}")
         return
     
     # Create output directory
@@ -145,7 +145,7 @@ def process_pdfs(input_dir: str = "D:/GitHub/Adobe-India-Hackathon25/Challenge_1
     failed = 0
     
     for pdf_file in pdf_files:
-        print(f"📖 Processing: {pdf_file.name}...", end=' ')
+        print(f"Processing: {pdf_file.name}...", end=' ')
         
         outline_data = extractor.extract_outline(pdf_file)
         
@@ -154,21 +154,21 @@ def process_pdfs(input_dir: str = "D:/GitHub/Adobe-India-Hackathon25/Challenge_1
             try:
                 with open(output_file, "w", encoding="utf-8") as f:
                     json.dump(outline_data, f, indent=2, ensure_ascii=False)
-                print(f"✅ Success ({outline_data['headings_found']} headings)")
+                print(f"Success ({outline_data['headings_found']} headings)")
                 successful += 1
             except Exception as e:
-                print(f"❌ Failed to write output: {e}")
+                print(f"Failed to write output: {e}")
                 failed += 1
         else:
-            print("❌ Failed to extract outline")
+            print("Failed to extract outline")
             failed += 1
     
-    print(f"\n📊 Processing complete:")
-    print(f"   ✅ Successful: {successful}")
-    print(f"   ❌ Failed: {failed}")
-    print(f"   📁 Output directory: {output_path}")
+    print(f"\n Processing complete:")
+    print(f"    Successful: {successful}")
+    print(f"    Failed: {failed}")
+    print(f"    Output directory: {output_path}")
 
 if __name__ == "__main__":
-    print("🚀 Starting PDF outline extraction...")
+    print(" Starting PDF outline extraction...")
     process_pdfs()
-    print("🏁 Finished processing.")
+    print(" Finished processing.")
