@@ -114,8 +114,8 @@ class PDFOutlineExtractor:
             print(f"Error processing {pdf_path.name}: {e}")
             return None
 
-def process_pdfs(input_dir: str = "D:/GitHub/Adobe-India-Hackathon25/Challenge_1a/app/input",
-                output_dir: str = "D:/GitHub/Adobe-India-Hackathon25/Challenge_1a/app/output") -> None:
+def process_pdfs(input_dir: str = "Challenge_1a/app/input/",
+                output_dir: str = "Challenge_1a/app/output/") -> None:
     """Process all PDF files in input directory."""
     
     input_path = Path(input_dir)
